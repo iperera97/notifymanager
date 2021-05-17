@@ -1,8 +1,8 @@
 import pytest
 
-from notifyme.subject import BaseSubject
-from notifyme.subscriber import BaseSubscriber
-from notifyme import utils as notify_utils
+from notifymanager.subject import BaseSubject
+from notifymanager.subscriber import BaseSubscriber
+from notifymanager import utils as notify_utils
 
 
 @pytest.fixture
