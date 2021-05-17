@@ -1,9 +1,9 @@
 import logging
 import functools
 
-logging.basicConfig(level=logging.DEBUG)
+from .import constants
 
-NOTIFY_METHOD_PREFIX = "notifyme_on_"
+logging.basicConfig(level=logging.DEBUG)
 
 
 class NotifyMeException(Exception):
@@ -39,7 +39,7 @@ def get_notify_attrs(source):
     all_attr = dir(source)
     return [
         attr for attr in all_attr
-        if isinstance(attr, str) and attr.startswith(NOTIFY_METHOD_PREFIX)
+        if isinstance(attr, str) and attr.startswith(constants.NOTIFY_METHOD_PREFIX)
     ]
 
 def get_callable_notify_methods(source, notify_attrs=None):

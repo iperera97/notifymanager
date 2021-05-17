@@ -1,0 +1,1 @@
+NOTIFY_METHOD_PREFIX = "notifyme_on_"
