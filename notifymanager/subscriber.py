@@ -38,8 +38,3 @@ class BaseSubscriber(metaclass=SubscriberMetaClass):
     def get_unique_name(self):
         return f"{self.subsriber_name}_{id(self)}"
 
-    def notifyme_on_http_request(self, msg, data_msg):
-        pass
-
-    def notifyme_on_email(self, msg, data_msg):
-        pass
