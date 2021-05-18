@@ -1,1 +1,3 @@
-NOTIFY_METHOD_PREFIX = "notifyme_on_"
+NOTIFY_METHOD_PREFIX = "notify_on_"
+NOTIFY_ALL_METHODS = "ALL"
+NOTIFY_METHOD_ARGS = ["msg", "data_msg"]

@@ -9,6 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 class NotifyMeException(Exception):
     pass
 
+
 def add_logger(func=None, *args_parent, **kwargs_parent):
 
     def wrapper_func(func):
@@ -42,6 +43,7 @@ def get_notify_attrs(source):
         if isinstance(attr, str) and attr.startswith(constants.NOTIFY_METHOD_PREFIX)
     ]
 
+
 def get_callable_notify_methods(source, notify_attrs=None):
     if notify_attrs is None:
         notify_attrs = get_notify_attrs(source)
@@ -51,5 +53,4 @@ def get_callable_notify_methods(source, notify_attrs=None):
         for attr in notify_attrs
         if callable(getattr(source, attr, None))
     ]
-
 

@@ -29,14 +29,13 @@ def test_create_subscription(new_subject, new_subsriber):
     second_time_sub = new_subject.subscribe(new_subsriber)
     all_subsribers = new_subject.get_all_subscribers()
 
-    assert first_time_sub == True
-    assert not second_time_sub
+    assert first_time_sub and second_time_sub
     assert len(all_subsribers) == 1
 
     first_time_unsub = new_subject.unsubscribe(new_subsriber)
     second_time_unsub = new_subject.unsubscribe(new_subsriber)
 
-    assert first_time_unsub == True
+    assert first_time_unsub
     assert not second_time_unsub
     assert len(all_subsribers) == 0
 
@@ -50,6 +49,6 @@ def test_publish_msg(new_subject, new_subsriber):
     new_subject.subscribe(new_subsriber)
     msg = "new data source come"
     data_msg = {"user_id": 100}
-    
+
     notify_response = notify_utils.publish_msg(new_subject, msg, data_msg)
     print(notify_response)
